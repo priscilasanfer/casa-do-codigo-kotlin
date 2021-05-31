@@ -8,8 +8,8 @@ import java.util.*
 @Repository
 interface AutorRepository : JpaRepository<Autor, Long> {
 
+    @Query("SELECT a FROM Autor a where a.email = :email")
     fun buscaPorEmail(email: String): Any
 
-    @Query("SELECT a FROM Autor a where a.email = :email")
     fun findByEmail(email: String): Optional<Autor>
 }
