@@ -13,7 +13,7 @@ import javax.validation.Valid
 class CarrosController {
 
     @Post("/api/carros")
-    fun criar(@Body @Valid carro: Carro): io.micronaut.http.HttpResponse<Any> {
-        return HttpResponse.ok(carro)
+    fun criar(@Body @Valid carroRequest: CarroRequest): io.micronaut.http.HttpResponse<Any> {
+        return HttpResponse.ok(carroRequest)
     }
 }
